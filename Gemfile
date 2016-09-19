@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 #My Gems
 gem 'devise'
+gem 'better_errors'
 
 
 group :development, :test do
@@ -39,6 +40,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'guard-rspec', require: false
 end
 
 group :development do
