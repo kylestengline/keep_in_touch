@@ -40,7 +40,6 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'guard-rspec', require: false
 end
 
 group :development do
