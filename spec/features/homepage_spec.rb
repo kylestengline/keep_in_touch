@@ -4,7 +4,7 @@ RSpec.feature "Vist Homepage" do
 
   scenario "Users can vist the homepage and click sign in and sign out" do
 
-    vist "/"
+    visit "/"
 
     expect(page).to have_link "Sign In"
     expect(page).to have_link "Sign Up"
