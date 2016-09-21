@@ -5,10 +5,10 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = current_user.contact.build(contact_params)
+    @contact = Contact.create(contact_params)
     if @contact.save
       flash[:notice] = "Contact created Successfully"
-      redirect_to root_path
+      redirect_to profiles_path
     else
       flash[:notice] = "Contact not created!"
       render :new

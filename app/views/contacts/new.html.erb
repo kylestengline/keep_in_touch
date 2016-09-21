@@ -12,7 +12,7 @@
 
 <body>
   <!-- Simple Textfield -->
-  <%= form_for @contact, url: new_contact_path do |f| %>
+  <%= form_for @contact do |f| %>
     <ul>
       <div class="mdl-textfield mdl-js-textfield">
         <%= f.label :first_name, class: "mdl-textfield__label", for: "sample1" %>
