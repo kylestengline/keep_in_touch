@@ -1,14 +1,22 @@
 class ContactsController < ApplicationController
 
+  def index
+    @contacts = Contact.all
+  end
+
+  def show
+    @contact = Contact.find(params[:id])
+  end
+
   def new
     @contact = Contact.new
   end
 
   def create
-    @contact = Contact.create(contact_params)
+    @contact = current_user.contacts.build(contact_params)
     if @contact.save
       flash[:notice] = "Contact created Successfully"
-      redirect_to profiles_path
+      redirect_to contacts_path
     else
       flash[:notice] = "Contact not created!"
       render :new

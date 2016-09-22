@@ -15,6 +15,7 @@ RSpec.feature 'User Profile' do
 
     expect(page).to have_content("Welcome #{@joe.email}")
     expect(current_path).to eq(profiles_path)
+    expect(page).to have_link("My Contacts")
     expect(page).to have_link("Add New Contact")
 
 

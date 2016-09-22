@@ -15,11 +15,11 @@ RSpec.feature 'User Profile' do
 
     fill_in "First Name", with: "First"
     fill_in "Last Name", with: "Last"
-    fill_in "Phone Number", with: 1234567891
+    fill_in "Phone Number", with: 123-456-7891
 
     click_button "Add Contact"
 
-    expect(current_path).to eq(profiles_path)
+    expect(current_path).to eq(contacts_path)
     expect(page).to have_content("Contact created Successfully")
 
   end

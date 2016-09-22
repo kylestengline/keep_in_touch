@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160921190302) do
+ActiveRecord::Schema.define(version: 20160922001817) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "phone_number"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "phone_number", limit: 8
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "user_id"
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +10,18 @@
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-light_blue.min.css" />
   <title>Keep In Touch</title>
 
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+  <% end %>
+
 </head>
+
 <body>
+
+  <% @contacts.each do |c| %>
+    <%= link_to c.first_name, contact_path(c) %>
+  <% end %>
+  
 </body>
 </html>
 <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
