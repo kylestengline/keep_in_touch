@@ -13,7 +13,9 @@ RSpec.feature "Users sees individual contact" do
 
     visit contacts_path
 
-    click_link(@contact.first_name) && click_link(@contact.last_name)
+    click_link(@contact.first_name)
+
+    expect(current_path).to eq(contact_path)
 
     expect(page).to have_content(@contact.first_name)
     expect(page).to have_content(@contact.last_name)
@@ -22,7 +24,6 @@ RSpec.feature "Users sees individual contact" do
 
     click_button "Send Message"
 
-    expect(current_path).to eq(contact_path)
     expect(page).to have_content("Message Sent")
 
   end

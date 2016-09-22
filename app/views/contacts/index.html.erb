@@ -24,25 +24,25 @@ h2 {
 }
 </style>
 
-<% @contacts.each do |c| %>
-  <div class="demo-list-action mdl-list">
-    <div class="mdl-list__item">
-      <span class="mdl-list__item-primary-content">
-        <i class="material-icons mdl-list__item-avatar">person</i>
-        <span>
-          <%= link_to c.first_name, contact_path(c) %>
-          <%= link_to c.last_name, contact_path(c) %>
+  <% @contacts.each do |c| %>
+    <div class="demo-list-action mdl-list">
+      <div class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">
+          <i class="material-icons mdl-list__item-avatar">person</i>
+          <span>
+            <%= link_to c.first_name, contact_path(c.id) %>
+            <%= link_to c.last_name, contact_path(c.id) %>
+          </span>
         </span>
-      </span>
+      </div>
     </div>
-  </div>
-<% end %>
-<% if @contacts.blank? %>
-  <div class="no-contacts">
-    <h2 class="contacts-none">You haven't added any contacts yet.</h2>
-    <%= link_to "Add New Contacts", new_contact_path, class: "mdl-button mdl-js-button mdl-button--raised" %>
-  </div>
-<% end %>
+  <% end %>
+  <% if @contacts.blank? %>
+    <div class="no-contacts">
+      <h2 class="contacts-none">You haven't added any contacts yet.</h2>
+      <%= link_to "Add New Contacts", new_contact_path, class: "mdl-button mdl-js-button mdl-button--raised" %>
+    </div>
+  <% end %>
   
 </body>
 </html>
