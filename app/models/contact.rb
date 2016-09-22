@@ -1,5 +1,7 @@
 class Contact < ApplicationRecord
-  validates :first_name, :last_name, :phone_number, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :phone_number, presence: true
 
   belongs_to :user
 end
