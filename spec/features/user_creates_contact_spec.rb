@@ -13,9 +13,10 @@ RSpec.feature 'User Profile' do
 
     click_link "Add New Contact"
 
-    fill_in "First Name", with: "First"
-    fill_in "Last Name", with: "Last"
-    fill_in "Phone Number", with: 123-456-7891
+    fill_in "First name", with: "Jill"
+    fill_in "Last name", with: "Greenberg"
+    fill_in "Phone number", with: 1234567891
+    fill_in "Message", with: "This is my message to you"
 
     click_button "Add Contact"
 

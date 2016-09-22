@@ -7,7 +7,7 @@ RSpec.feature 'User Profile' do
     login_as(@joe)
   end
 
-  scenario 'A logged in valid user can creates a contacts' do
+  scenario 'A logged in valid user can creates contacts' do
     
     visit "/"
 
