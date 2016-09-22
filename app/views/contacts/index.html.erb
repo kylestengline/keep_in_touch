@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +7,42 @@
 
   <!-- Color Scheme -->
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-light_blue.min.css" />
-  <title>Keep In Touch</title>
 
-  <% if flash[:notice] %>
     <%= flash[:notice] %>
-  <% end %>
 
 </head>
 
 <body>
+  <!-- List items with avatar and action -->
+<style>
+.demo-list-action {
+  width: 300px;
+}
 
-  <% @contacts.each do |c| %>
-    <%= link_to c.first_name, contact_path(c) %>
-  <% end %>
+h2 {
+  color: #222;
+}
+</style>
+
+<% @contacts.each do |c| %>
+  <div class="demo-list-action mdl-list">
+    <div class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-avatar">person</i>
+        <span>
+          <%= link_to c.first_name, contact_path(c) %>
+          <%= link_to c.last_name, contact_path(c) %>
+        </span>
+      </span>
+    </div>
+  </div>
+<% end %>
+<% if @contacts.blank? %>
+  <div class="no-contacts">
+    <h2 class="contacts-none">You haven't added any contacts yet.</h2>
+    <%= link_to "Add New Contacts", new_contact_path, class: "mdl-button mdl-js-button mdl-button--raised" %>
+  </div>
+<% end %>
   
 </body>
 </html>

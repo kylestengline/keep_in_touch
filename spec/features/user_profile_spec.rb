@@ -18,6 +18,5 @@ RSpec.feature 'User Profile' do
     expect(page).to have_link("My Contacts")
     expect(page).to have_link("Add New Contact")
 
-
   end
 end

@@ -13,11 +13,8 @@ RSpec.feature "Show Contacts" do
     
     visit "/contacts"
 
-    click_link @contact.first_name
-
-    expect(page).to have_content(@contact.first_name)
+    expect(page).to have_link(@contact.first_name)
     expect(page).to have_content(@contact.last_name)
-    expect(page).to have_content(@contact.phone_number)
     
   end
 end

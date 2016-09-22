@@ -12,5 +12,6 @@ RSpec.feature "Visit Homepage" do
     expect(page).to have_link "My Profile"
     expect(page).to have_link "Sign Up"
     expect(current_path).to eq(root_path) 
+
   end
 end
