@@ -15,7 +15,7 @@ RSpec.feature "Users sees individual contact" do
 
     click_link(@contact.first_name)
 
-    expect(current_path).to eq(contact_path)
+    expect(current_path).to eq(contact_path(@contact))
 
     expect(page).to have_content(@contact.first_name)
     expect(page).to have_content(@contact.last_name)
