@@ -1,5 +1,4 @@
 class ContactsController < ApplicationController
-  @number = YAML.load_file('config/phone_numbers.yml')
 
   def index
     @contacts = current_user.contacts.all
@@ -24,6 +23,30 @@ class ContactsController < ApplicationController
     end
   end
 
+  def message
+    @twilio_test = ENV['TWILIO_SID']
+    @twilio_auth = ENV['TWILIO_AUTH_TOKEN']
+
+#have to pay in order for this to work.
+    @client = Twilio::REST::Client.new @twilio_test, @twilio_auth
+      @client.account.messages.create({
+        from: 5709061009,
+        to: 5709061009,
+        body: "MY Message to you",
+      })
+      #in production this should be 
+      #from: twilio_number
+      #to: contact_number and body stays as is.
+#    end
+    redirect_to :show
+
+#    @number = YAML.load_file('config/phone_numbers.yml')
+    #not sure I need this or not
+#    @contact_number = Contact.find(params[id: :phone_number]) 
+#    @contact_message = Contact.find(params[:id])
+
+#    @number.each do |num|
+  end
 
     private
 
@@ -32,24 +55,5 @@ class ContactsController < ApplicationController
         .permit(:first_name, :last_name, :phone_number, :message)
       end
 
-      def send_message
-        @twilio_test = ENV['TWILIO_SID']
-        @client = Twilio::REST::Client.new ENV['TWILIO_TEST_TOKEN']
-
-        @contact_number = Contact.find(params[:phone_number]) 
-        @contact_message = Contact.find(params[:message])
-
-        @number.each do |num|
-          client.account.messages.create(
-            from: num,
-            to: num,
-            body: @contact_message
-          )
-          #in production this should be 
-          #from: twilio_number
-          #to: contact_number and body stays as is.
-        end
-        redirect_to :show
-      end
 
 end

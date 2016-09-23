@@ -8,7 +8,5 @@ Rails.application.routes.draw do
 
   resources :contacts
 
-  #re-visit tutorail for routes for sending messages
-  resources :send_message, only: [:create]
-
+  post "/message", to: "contacts#message"
 end

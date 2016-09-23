@@ -30,8 +30,8 @@ h2 {
         <span class="mdl-list__item-primary-content">
           <i class="material-icons mdl-list__item-avatar">person</i>
           <span>
-            <%= link_to c.first_name, contact_path(c) %>
-            <%= link_to c.last_name, contact_path(c) %>
+            <%= link_to c.first_name, contact_path(c.id) %>
+            <%= link_to c.last_name, contact_path(c.id) %>
           </span>
         </span>
       </div>

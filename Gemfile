@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 #My Gems
 gem 'devise'
 gem 'better_errors'
+gem 'twilio-ruby'
 
 
 group :development, :test do
