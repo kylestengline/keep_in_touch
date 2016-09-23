@@ -15,26 +15,26 @@
   <%= form_for @contact do |f| %>
     <ul>
       <div class="mdl-textfield mdl-js-textfield">
-        <%= f.label :first_name, class: "mdl-textfield__label" %>
-        <%= f.text_field :first_name, class: "mdl-textfield__input", type: "text" %>
+        <%= f.label :first_name, class: "mdl-textfield__label", for: "sample1" %>
+        <%= f.text_field :first_name, class: "mdl-textfield__input", type: "text", id: "sample1" %>
       </div>
 
       <div class="mdl-textfield mdl-js-textfield">
-        <%= f.label :last_name, class: "mdl-textfield__label" %>
-        <%= f.text_field :last_name, class: "mdl-textfield__input", type: "text" %>
+        <%= f.label :last_name, class: "mdl-textfield__label", for: "sample2" %>
+        <%= f.text_field :last_name, class: "mdl-textfield__input", type: "text", id: "sample2" %>
       </div>
 
     <!-- Numeric Textfield -->
       <div class="mdl-textfield mdl-js-textfield">
-        <%= f.label :phone_number, class: "mdl-textfield__label", for: "sample2" %>
-        <%= f.number_field :phone_number, class: "mdl-textfield__input", type: "text", pattern: "-?[0-9]*(\.[0-9]+)?", id: "sample2" %>
+        <%= f.label :phone_number, class: "mdl-textfield__label", for: "sample3" %>
+        <%= f.number_field :phone_number, class: "mdl-textfield__input", type: "text", pattern: "-?[0-9]*(\.[0-9]+)?", id: "sample3" %>
         <span class="mdl-textfield__error">Input is not a number!</span>
       </div>
 
     <!-- Message Textfield -->
       <div class="mdl-textfield mdl-js-textfield">
-        <%= f.label :message, class: "mdl-textfield__label", for: "sample1" %>
-        <%= f.text_field :message, class: "mdl-textfield__input", type: "text", id: "sample1" %>
+        <%= f.label :message, class: "mdl-textfield__label", for: "sample4" %>
+        <%= f.text_field :message, class: "mdl-textfield__input", type: "text", id: "sample4" %>
       </div>
 
       <%= f.submit "Add Contact", class: "mdl-button mdl-js-button mdl-button--raised" %>
