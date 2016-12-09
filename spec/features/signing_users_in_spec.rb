@@ -15,5 +15,7 @@ RSpec.feature "Signing Users In" do
     click_button "Log in"
 
     expect(page).to have_content("Welcome, #{@joe.email}!")
+    expect(page).to have_link "My Profile"
+    expect(page).to have_link "Sign Out"
   end
 end
