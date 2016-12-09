@@ -1,2 +1,2 @@
 # README
-1. This my readme with only one thing to read...Enjoy!
+1. This is my readme with only one thing to read...Enjoy!
