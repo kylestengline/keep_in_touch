@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'better_errors'
 gem 'twilio-ruby'
+gem 'omniauth-facebook'
 
 
 group :development, :test do
