@@ -9,7 +9,7 @@ Devise.setup do |config|
   # config.secret_key = '1d2af9c3bf3f7ce93edbd30b989e81914b38f48b4be0c8a5b776171807f82641677ca50c252a3a8dd63ccdffc872e6c04400533e339edcad558685e65bfb8314'
 
   #### FACEBOOK OAUTH #####
-  config.omniauth :facebook, "APP_ID", "APP_SECRET"
+  config.omniauth :facebook, "APP_ID", "APP_SECRET", scope: 'email', info_fields: 'email,name'
 
 
   # ==> Mailer Configuration
