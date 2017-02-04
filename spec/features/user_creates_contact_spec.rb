@@ -2,12 +2,10 @@ require 'rails_helper'
 
 RSpec.feature 'User Profile' do
 
-  before do 
-    @joe = User.create(email: "joe@example.com", password: 'rickshaw')
-    login_as(@joe)
-  end
+  let(:user) {User.create(email: "joe@example.com", password: 'rickshaw')}
 
   scenario 'A logged in valid user can create contacts' do
+    login_as(user)
     
     visit "/profiles"
 

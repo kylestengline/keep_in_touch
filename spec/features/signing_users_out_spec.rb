@@ -2,19 +2,16 @@ require 'rails_helper'
 require 'database_cleaner'
 
 RSpec.feature "Users can Sign Out" do
-  before do 
-    @joseph = User.create(email: 'js@me.com', password: 'password')
+  let(:user) {User.create(email: 'js@me.com', password: 'password')}
 
-    visit root_path
-
-    click_link "Sign In"
-    fill_in "Email", with: @joseph.email
-    fill_in "Password", with: @joseph.password
-    click_button "Log in"
-  end
 
  scenario "A signed in user can sign out" do
    visit root_path
+
+   click_link "Sign In"
+   fill_in "Email", with: user.email
+   fill_in "Password", with: user.password
+   click_button "Log in"
 
    within("nav.mdl-navigation.mdl-layout--large-screen-only") do
      click_link "Sign Out"
