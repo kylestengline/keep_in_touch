@@ -1,3 +1,15 @@
 // Place all the styles related to the welcomes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//
+p.explaination { 
+  padding-top: 200px;
+  text-align: center;
+  font-size: 35px;  
+}
+
+h3.welcome-user {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
